@@ -191,7 +191,6 @@ void falling21(uint8_t x, uint8_t y, uint8_t z) {
 	falling21_step++;
 }
 
-
 int escaping21_step = 0;
 int escaping21_step1 = 0;
 int escaping21_step2 = 0;
@@ -470,6 +469,8 @@ void hearbeat() {
 
 // Режим школы 21 финиш
 
+// Дополнительная функция, которую надо скопировать в скетч, чтобы не париться по поводу
+// прорисовки за пределами куба
 void setVoxelSafe(uint8_t x, uint8_t y, uint8_t z) {
 	if (x >= 0 && x <= 7 && y >= 0 && y <= 7 && z >= 0 && z <= 7)
 		setVoxel(x, y, z);
@@ -478,11 +479,10 @@ void setVoxelSafe(uint8_t x, uint8_t y, uint8_t z) {
 int renderNext()
 {
 	school21();
-	//text("Хаюшки", 6);
+	// rain();
+	// text("Хаюшки", 6);
 	renderCube();
 }
-
-
 
 int	key_hook(int keycode, t_vars *vars)
 {
@@ -511,12 +511,18 @@ int main(int argc, char **argv)
 	return (1);
 }
 
+// Размер между светодиодами
 int size = 100;
+// Пропорция по высоте
 int left_prop = 15;
+// Пропорция по ширине
 int right_prop = 50;
+// Цвет основного пикселя
 int low_color = 0xFFFFFF;
+// Цвет светящегося пикселя
 int hight_color = 0xFF0000;
 
+// Отрисовка "светящегося" пикселя
 void put_big_pixel(int x, int y) {
 	mlx_pixel_put(vars.mlx, vars.win, x-1, y, hight_color);
 	mlx_pixel_put(vars.mlx, vars.win, x-2, y, hight_color);
@@ -529,7 +535,7 @@ void put_big_pixel(int x, int y) {
 	mlx_pixel_put(vars.mlx, vars.win, x, y + 1, hight_color);
 	mlx_pixel_put(vars.mlx, vars.win, x, y + 2, hight_color);
 }
-
+// Отрисовка линии в кубе
 void renderLine(uint8_t l, uint8_t i, uint8_t j) {
 	for (uint8_t z = 0; z < 8; z++) {
 		int y = 100 + i * size + j * left_prop;
@@ -543,20 +549,18 @@ void renderLine(uint8_t l, uint8_t i, uint8_t j) {
 		}
 	}
 }
+// Отрисовка куба
 void renderCube() {
 	for (uint8_t i = 0; i < 8; i++) {
-//		if (INVERT_Y) SPI.transfer(0x01 << (7 - i));
-//		else SPI.transfer(0x01 << i);
-
 		if (INVERT_Y) {
 			for (uint8_t j = 0; j < 8; j++) {
-				if (INVERT_X) renderLine(cube[7 - i][j], i, j);
+				if (INVERT_X) renderLine(cube[i][j], i, j);
 				else renderLine(cube[i][j], i, j);
 			}
 		} else {
 			for (uint8_t j = 0; j < 8; j++) {
 				if (INVERT_X) renderLine(cube[7 - i][j], i, j);
-				else renderLine(cube[i][7 - j], i, j);
+				else renderLine(cube[7 - i][j], i, j);
 			}
 		}
 	}

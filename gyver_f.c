@@ -2,6 +2,29 @@
 
 #include "main.h"
 
+int my_random(int lower, int upper)
+{
+	int num = (rand() %
+			   (upper - lower + 1)) + lower;
+	return num;
+}
+
+void rain() {
+	if (loading) {
+		clearCube();
+		loading = false;
+	}
+	timer++;
+	if (timer > modeTimer) {
+		timer = 0;
+		shift(NEG_Y);
+		uint8_t numDrops = my_random(0, 5);
+		for (uint8_t i = 0; i < numDrops; i++) {
+			setVoxel(my_random(0, 8), 7, my_random(0, 8));
+		}
+	}
+}
+
 void sinusFill() {
 	if (loading) {
 		clearCube();

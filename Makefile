@@ -7,7 +7,7 @@ UNAME := $(shell uname)
 
 CFLAGS= -I$(INC) -O3 -I.. -g
 
-NAME= cub512
+NAME= cube512
 SRC = main.c gyver_f.c fonts.c
 OBJ = $(SRC:%.c=%.o)
 
