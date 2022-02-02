@@ -476,10 +476,10 @@ void setVoxelSafe(uint8_t x, uint8_t y, uint8_t z) {
 		setVoxel(x, y, z);
 }
 
-int renderNext()
+void renderNext()
 {
-	school21();
-	// rain();
+	//school21();
+	 rain();
 	// text("Хаюшки", 6);
 	renderCube();
 }
@@ -555,12 +555,12 @@ void renderCube() {
 		if (INVERT_Y) {
 			for (uint8_t j = 0; j < 8; j++) {
 				if (INVERT_X) renderLine(cube[i][j], i, j);
-				else renderLine(cube[i][j], i, j);
+				else renderLine(cube[7 - i][j], i, j);
 			}
 		} else {
 			for (uint8_t j = 0; j < 8; j++) {
 				if (INVERT_X) renderLine(cube[7 - i][j], i, j);
-				else renderLine(cube[7 - i][j], i, j);
+				else renderLine(cube[i][j], i, j);
 			}
 		}
 	}
