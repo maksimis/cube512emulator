@@ -1,1 +1,1 @@
-make && ./cube512
+make re && ./cube512

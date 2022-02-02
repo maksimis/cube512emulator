@@ -15,7 +15,7 @@ uint16_t modeTimer;
 int8_t pos;
 int loading;
 
-#define INVERT_Y 1    // инвертировать по вертикали (если дождь идёт вверх)
+#define INVERT_Y 0    // инвертировать по вертикали (если дождь идёт вверх)
 #define INVERT_X 0    // инвертировать по горизонтали (если текст не читается)
 #define MIRROR_FONT 1 // зеркалить текст
 

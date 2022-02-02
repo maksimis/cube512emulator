@@ -74,24 +74,24 @@ void school21() {
 
 void draw21(uint8_t x, uint8_t y, uint8_t z) {
 	// 2
-	setVoxelSafe( x + 0, y + 4, z);
-	setVoxelSafe( x + 1, y + 4, z);
-	setVoxelSafe( x + 2, y + 4, z);
-	setVoxelSafe( x + 0, y + 3, z);
-	setVoxelSafe( x + 0, y + 2, z);
-	setVoxelSafe( x + 1, y + 2, z);
-	setVoxelSafe( x + 2, y + 2, z);
-	setVoxelSafe( x + 2, y + 1, z);
 	setVoxelSafe( x + 0, y + 0, z);
 	setVoxelSafe( x + 1, y + 0, z);
 	setVoxelSafe( x + 2, y + 0, z);
+	setVoxelSafe( x + 0, y + 1, z);
+	setVoxelSafe( x + 0, y + 2, z);
+	setVoxelSafe( x + 1, y + 2, z);
+	setVoxelSafe( x + 2, y + 2, z);
+	setVoxelSafe( x + 2, y + 3, z);
+	setVoxelSafe( x + 0, y + 4, z);
+	setVoxelSafe( x + 1, y + 4, z);
+	setVoxelSafe( x + 2, y + 4, z);
 	// 1
-	setVoxelSafe( x + 5, y + 4, z);
-	setVoxelSafe( x + 5, y + 3, z);
-	setVoxelSafe( x + 5, y + 2, z);
-	setVoxelSafe( x + 5, y + 1, z);
-	setVoxelSafe( x + 4, y + 0, z);
 	setVoxelSafe( x + 5, y + 0, z);
+	setVoxelSafe( x + 5, y + 1, z);
+	setVoxelSafe( x + 5, y + 2, z);
+	setVoxelSafe( x + 5, y + 3, z);
+	setVoxelSafe( x + 4, y + 4, z);
+	setVoxelSafe( x + 5, y + 4, z);
 }
 
 int falling21_step = 0;
@@ -170,24 +170,24 @@ void falling21(uint8_t x, uint8_t y, uint8_t z) {
 	if (falling21_step > 48 && falling21_step1 < 0)
 		falling21_step1++;
 	// 2
-	setVoxelSafe( x + 0, y + 4 + falling21_step17, z);
-	setVoxelSafe( x + 1, y + 4 + falling21_step15, z);
-	setVoxelSafe( x + 2, y + 4 + falling21_step14, z);
-	setVoxelSafe( x + 0, y + 3 + falling21_step12, z);
-	setVoxelSafe( x + 0, y + 2 + falling21_step11, z);
-	setVoxelSafe( x + 1, y + 2 + falling21_step9, z);
-	setVoxelSafe( x + 2, y + 2 + falling21_step8, z);
-	setVoxelSafe( x + 2, y + 1 + falling21_step7, z);
-	setVoxelSafe( x + 0, y + 0 + falling21_step5, z);
-	setVoxelSafe( x + 1, y + 0 + falling21_step3, z);
-	setVoxelSafe( x + 2, y + 0 + falling21_step1, z);
+	setVoxelSafe( x + 0, y + 0 - falling21_step17, z);
+	setVoxelSafe( x + 1, y + 0 - falling21_step15, z);
+	setVoxelSafe( x + 2, y + 0 - falling21_step14, z);
+	setVoxelSafe( x + 0, y + 1 - falling21_step12, z);
+	setVoxelSafe( x + 0, y + 2 - falling21_step11, z);
+	setVoxelSafe( x + 1, y + 2 - falling21_step9, z);
+	setVoxelSafe( x + 2, y + 2 - falling21_step8, z);
+	setVoxelSafe( x + 2, y + 3 - falling21_step7, z);
+	setVoxelSafe( x + 0, y + 4 - falling21_step5, z);
+	setVoxelSafe( x + 1, y + 4 - falling21_step3, z);
+	setVoxelSafe( x + 2, y + 4 - falling21_step1, z);
 	// 1
-	setVoxelSafe( x + 5, y + 4 + falling21_step16, z);
-	setVoxelSafe( x + 5, y + 3 + falling21_step13, z);
-	setVoxelSafe( x + 5, y + 2 + falling21_step10, z);
-	setVoxelSafe( x + 5, y + 1 + falling21_step6, z);
-	setVoxelSafe( x + 4, y + 0 + falling21_step4, z);
-	setVoxelSafe( x + 5, y + 0 + falling21_step2, z);
+	setVoxelSafe( x + 5, y + 0 - falling21_step16, z);
+	setVoxelSafe( x + 5, y + 1 - falling21_step13, z);
+	setVoxelSafe( x + 5, y + 2 - falling21_step10, z);
+	setVoxelSafe( x + 5, y + 3 - falling21_step6, z);
+	setVoxelSafe( x + 4, y + 4 - falling21_step4, z);
+	setVoxelSafe( x + 5, y + 4 - falling21_step2, z);
 	falling21_step++;
 }
 
@@ -267,24 +267,24 @@ void escaping21(uint8_t x, uint8_t y, uint8_t z) {
 		if (escaping21_step > 48 && escaping21_step1 < 8)
 			escaping21_step1++;
 		// 2
-		setVoxelSafe( x + 0, y + 4 + escaping21_step17, z);
-		setVoxelSafe( x + 1, y + 4 + escaping21_step15, z);
-		setVoxelSafe( x + 2, y + 4 + escaping21_step14, z);
-		setVoxelSafe( x + 0, y + 3 + escaping21_step12, z);
-		setVoxelSafe( x + 0, y + 2 + escaping21_step11, z);
-		setVoxelSafe( x + 1, y + 2 + escaping21_step9, z);
-		setVoxelSafe( x + 2, y + 2 + escaping21_step8, z);
-		setVoxelSafe( x + 2, y + 1 + escaping21_step7, z);
-		setVoxelSafe( x + 0, y + 0 + escaping21_step5, z);
-		setVoxelSafe( x + 1, y + 0 + escaping21_step3, z);
-		setVoxelSafe( x + 2, y + 0 + escaping21_step1, z);
+		setVoxelSafe( x + 0, y + 0 - escaping21_step17, z);
+		setVoxelSafe( x + 1, y + 0 - escaping21_step15, z);
+		setVoxelSafe( x + 2, y + 0 - escaping21_step14, z);
+		setVoxelSafe( x + 0, y + 1 - escaping21_step12, z);
+		setVoxelSafe( x + 0, y + 2 - escaping21_step11, z);
+		setVoxelSafe( x + 1, y + 2 - escaping21_step9, z);
+		setVoxelSafe( x + 2, y + 2 - escaping21_step8, z);
+		setVoxelSafe( x + 2, y + 3 - escaping21_step7, z);
+		setVoxelSafe( x + 0, y + 4 - escaping21_step5, z);
+		setVoxelSafe( x + 1, y + 4 - escaping21_step3, z);
+		setVoxelSafe( x + 2, y + 4 - escaping21_step1, z);
 		// 1
-		setVoxelSafe( x + 5, y + 4 + escaping21_step16, z);
-		setVoxelSafe( x + 5, y + 3 + escaping21_step13, z);
-		setVoxelSafe( x + 5, y + 2 + escaping21_step10, z);
-		setVoxelSafe( x + 5, y + 1 + escaping21_step6, z);
-		setVoxelSafe( x + 4, y + 0 + escaping21_step4, z);
-		setVoxelSafe( x + 5, y + 0 + escaping21_step2, z);
+		setVoxelSafe( x + 5, y + 0 - escaping21_step16, z);
+		setVoxelSafe( x + 5, y + 1 - escaping21_step13, z);
+		setVoxelSafe( x + 5, y + 2 - escaping21_step10, z);
+		setVoxelSafe( x + 5, y + 3 - escaping21_step6, z);
+		setVoxelSafe( x + 4, y + 4 - escaping21_step4, z);
+		setVoxelSafe( x + 5, y + 4 - escaping21_step2, z);
 	}
 	escaping21_step++;
 }
@@ -292,44 +292,44 @@ void escaping21(uint8_t x, uint8_t y, uint8_t z) {
 int hearbeat_tick = 0;
 
 void drawSmallHeart(uint8_t x, uint8_t y, uint8_t z) {
-	setVoxelSafe(x + 0, y + 0, z);
+	setVoxelSafe(x + 0, y + 2, z);
 	setVoxelSafe(x + 0, y + 1, z);
 	setVoxelSafe(x + 1, y + 1, z);
-	setVoxelSafe(x + 1, y + 2, z);
-	setVoxelSafe(x + 2, y + 0, z);
+	setVoxelSafe(x + 1, y + 0, z);
+	setVoxelSafe(x + 2, y + 2, z);
 	setVoxelSafe(x + 2, y + 1, z);
 }
 
 void drawMediumHeart(uint8_t x, uint8_t y, uint8_t z) {
-	setVoxelSafe(x + 1, y + 0, z);
-	setVoxelSafe(x + 3, y + 0, z);
-	setVoxelSafe(x + 0, y + 1, z);
-	setVoxelSafe(x + 2, y + 1, z);
-	setVoxelSafe(x + 4, y + 1, z);
+	setVoxelSafe(x + 1, y + 4, z);
+	setVoxelSafe(x + 3, y + 4, z);
+	setVoxelSafe(x + 0, y + 3, z);
+	setVoxelSafe(x + 2, y + 3, z);
+	setVoxelSafe(x + 4, y + 3, z);
 	setVoxelSafe(x + 0, y + 2, z);
 	setVoxelSafe(x + 4, y + 2, z);
-	setVoxelSafe(x + 1, y + 3, z);
-	setVoxelSafe(x + 3, y + 3, z);
-	setVoxelSafe(x + 2, y + 4, z);
+	setVoxelSafe(x + 1, y + 1, z);
+	setVoxelSafe(x + 3, y + 1, z);
+	setVoxelSafe(x + 2, y + 0, z);
 }
 
 void drawBigHeart(uint8_t x, uint8_t y, uint8_t z) {
-	setVoxelSafe(x + 1, y + 0, z);
-	setVoxelSafe(x + 2, y + 0, z);
-	setVoxelSafe(x + 4, y + 0, z);
-	setVoxelSafe(x + 5, y + 0, z);
-	setVoxelSafe(x + 0, y + 1, z);
-	setVoxelSafe(x + 3, y + 1, z);
-	setVoxelSafe(x + 6, y + 1, z);
-	setVoxelSafe(x + 0, y + 2, z);
-	setVoxelSafe(x + 6, y + 2, z);
-	setVoxelSafe(x + 0, y + 3, z);
-	setVoxelSafe(x + 6, y + 3, z);
-	setVoxelSafe(x + 5, y + 4, z);
-	setVoxelSafe(x + 1, y + 4, z);
+	setVoxelSafe(x + 1, y + 5, z);
 	setVoxelSafe(x + 2, y + 5, z);
 	setVoxelSafe(x + 4, y + 5, z);
-	setVoxelSafe(x + 3, y + 0, z);
+	setVoxelSafe(x + 5, y + 5, z);
+	setVoxelSafe(x + 0, y + 4, z);
+	setVoxelSafe(x + 3, y + 4, z);
+	setVoxelSafe(x + 6, y + 4, z);
+	setVoxelSafe(x + 0, y + 3, z);
+	setVoxelSafe(x + 6, y + 3, z);
+	setVoxelSafe(x + 0, y + 2, z);
+	setVoxelSafe(x + 6, y + 2, z);
+	setVoxelSafe(x + 5, y + 1, z);
+	setVoxelSafe(x + 1, y + 1, z);
+	setVoxelSafe(x + 2, y + 0, z);
+	setVoxelSafe(x + 4, y + 0, z);
+	setVoxelSafe(x + 3, y + 5, z);
 }
 
 void hearbeat() {
@@ -478,8 +478,8 @@ void setVoxelSafe(uint8_t x, uint8_t y, uint8_t z) {
 
 void renderNext()
 {
-	//school21();
-	 rain();
+	school21();
+	// rain();
 	// text("Хаюшки", 6);
 	renderCube();
 }

@@ -116,7 +116,7 @@ void text(char *someText, int8_t textLength) {
 				int8_t thisFont = getFont(someText[charCounter], i);
 				int8_t mirrorFont = 0;
 				for (int8_t i = 0; i < 7; i++) {
-					if (thisFont & (1 << 6 - i)) mirrorFont |= (1 << i);
+					if (thisFont & (1 << (6 - i))) mirrorFont |= (1 << i);
 					else mirrorFont |= (0 << i);
 				}
 				if (MIRROR_FONT) cube[i][0] = mirrorFont;
